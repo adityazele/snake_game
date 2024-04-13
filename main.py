@@ -6,7 +6,9 @@
 # TODO 6: Detect collision with wall
 # TODO 7: Detect collision with tail
 
-from turtle import Turtle, Screen
+from turtle import Screen
 from snake import Snake
+
+screen = Screen()
 
 slither = Snake()
