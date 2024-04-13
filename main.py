@@ -8,7 +8,26 @@
 
 from turtle import Screen
 from snake import Snake
+import time
+
+game_is_on = True
 
 screen = Screen()
+screen.tracer(0)
+screen.title('snake game')
+screen.bgcolor('black')
 
 slither = Snake()
+
+screen.listen()
+screen.onkey(slither.up, 'Up')
+screen.onkey(slither.down, 'Down')
+screen.onkey(slither.right, 'Right')
+screen.onkey(slither.left, 'Left')
+
+while game_is_on:
+    screen.update()
+    slither.move()
+    time.sleep(0.1)
+
+screen.exitonclick()
