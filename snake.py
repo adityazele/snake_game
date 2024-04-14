@@ -1,5 +1,4 @@
-from turtle import Turtle, Screen
-import time
+from turtle import Turtle
 
 
 class Snake:
@@ -21,6 +20,16 @@ class Snake:
             self.snake.goto(x, y)
             x -= 20
             self.snake_segments.append(self.snake)
+
+    def increase_length(self):
+        self.snake = Turtle()
+        self.snake.shape('square')
+        self.snake.color('white')
+        self.snake.penup()
+        x = self.snake_segments[-1].xcor() - 20
+        y = self.snake_segments[-1].ycor()
+        self.snake.goto(x, y)
+        self.snake_segments.append(self.snake)
 
     def move(self):
         for seg in reversed(range(len(self.snake_segments))):
